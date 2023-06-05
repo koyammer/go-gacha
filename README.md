@@ -49,3 +49,4 @@ $ go test ./...
 # ビルド
 $ go build -o server .
 ```
+

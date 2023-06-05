@@ -38,8 +38,9 @@ func main() {
 
 	d := db.New(env.NewAppEnv())
 	us := store.NewUserStore(d)
+	ps := store.NewPostStore(d)
 
-	h := handler.NewHandler(*as, *us)
+	h := handler.NewHandler(*as, *us, *ps)
 	h.Register(api)
-	e.Logger.Fatal(e.Start(":8000"))
+	e.Logger.Fatal(e.Start(":8080"))
 }

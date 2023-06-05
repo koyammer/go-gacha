@@ -19,6 +19,7 @@ func New(e env.Env) *gorm.DB {
 }
 
 func NewDB(e env.Env) *gorm.DB {
+	log.Println("=========================" + e.Dsn)
 	db, err := gorm.Open(mysql.Open(e.Dsn), &gorm.Config{
 		Logger: logger.New(
 			log.New(os.Stdout, "\r\n", log.LstdFlags),

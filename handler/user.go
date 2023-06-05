@@ -3,6 +3,7 @@ package handler
 import (
 	ae "go-echo-starter/error"
 	"go-echo-starter/model"
+	"log"
 	"net/http"
 	"strconv"
 
@@ -26,6 +27,8 @@ type userResponse struct {
 }
 
 func (h *Handler) getUser(c echo.Context) error {
+
+	log.Println("pppppppppppppp")
 	id, _ := strconv.Atoi(c.Param("id"))
 	user, err := h.userStore.FindByID(id)
 
